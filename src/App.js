@@ -3,6 +3,13 @@ import Pagination from './Pagination';
 import useDataApi from './useDataApi';
 import './App.css';
 
+// Define the paginate function here
+const paginate = (items, pageNumber, pageSize) => {
+  const start = (pageNumber - 1) * pageSize;
+  let page = items.slice(start, start + pageSize);
+  return page;
+};
+
 function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 10;
