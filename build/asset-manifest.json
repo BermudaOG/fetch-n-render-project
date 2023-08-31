@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/fetch-n-render-project/static/css/main.2b3908b2.css",
+    "main.js": "/fetch-n-render-project/static/js/main.68700dd0.js",
+    "static/js/787.b2a9905f.chunk.js": "/fetch-n-render-project/static/js/787.b2a9905f.chunk.js",
+    "index.html": "/fetch-n-render-project/index.html",
+    "main.2b3908b2.css.map": "/fetch-n-render-project/static/css/main.2b3908b2.css.map",
+    "main.68700dd0.js.map": "/fetch-n-render-project/static/js/main.68700dd0.js.map",
+    "787.b2a9905f.chunk.js.map": "/fetch-n-render-project/static/js/787.b2a9905f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2b3908b2.css",
+    "static/js/main.68700dd0.js"
+  ]
+}
