@@ -1,0 +1,14 @@
+.page-item.active {
+    background-color: #007bff !important;
+    color: white !important;
+  }
+
+.page-item {
+    background-color: #B9B4C7;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    margin: 2px;
+    cursor: pointer;
+  }
+  

@@ -20,9 +20,9 @@ function App() {
     }
   );
 
-  const handlePageChange = (e) => {
-    setCurrentPage(Number(e.target.textContent));
-  };
+  const handlePageChange = (e, page) => {
+    setCurrentPage(page);
+  };  
 
   let page = data.hits;
   if (page.length >= 1) {

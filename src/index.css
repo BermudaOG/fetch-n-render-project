@@ -11,3 +11,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+body {
+  margin: 0;
+  background-color: #352F44;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex: 1;
+}
+
+.left-column,
+.right-column {
+  background-color: #B9B4C7;
+  padding: 20px;
+  flex: 1;
+}
+
+.content {
+  flex: 4;
+}
+
+a {
+  color: #FAF0E6;
+  text-decoration: none;
+}
+
+a:visited {
+  color: red;
+}
+
+a:hover {
+  color: #60cfb3;
+}
