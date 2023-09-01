@@ -34,17 +34,8 @@ body {
 
 .content {
   flex: 4;
-}
-
-a {
+  background-color: #352F44;
   color: #FAF0E6;
-  text-decoration: none;
+  padding: 20px;
 }
 
-a:visited {
-  color: red;
-}
-
-a:hover {
-  color: #60cfb3;
-}

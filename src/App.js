@@ -1,55 +1,41 @@
-import React, { useState, Fragment } from 'react';
-import Pagination from './Pagination';
-import useDataApi from './useDataApi';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import NewsComponent from './NewsComponent';
 
-// Define the paginate function here
-const paginate = (items, pageNumber, pageSize) => {
-  const start = (pageNumber - 1) * pageSize;
-  let page = items.slice(start, start + pageSize);
-  return page;
-};
+const API_KEY = '07e119c88edb4281b4a0bc8400661ba8';
+const API_ENDPOINT = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
 
 function App() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 10;
-  const [{ data, isLoading, isError }, doFetch] = useDataApi(
-    "https://hn.algolia.com/api/v1/search?query=MIT",
-    {
-      hits: [],
-    }
-  );
+  const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const handlePageChange = (e, page) => {
-    setCurrentPage(page);
-  };  
+useEffect(() => {
+  axios.get(API_ENDPOINT)
+    .then((response) => {
+      setArticles(response.data.articles);
+      setIsLoading(false);
+    })
+    .catch((error) => {
+      console.error('API Error:', error);
+      setIsLoading(false);
+    });
+}, []);
 
-  let page = data.hits;
-  if (page.length >= 1) {
-    page = paginate(page, currentPage, pageSize);
-    console.log(`currentPage: ${currentPage}`);
-  }
-
-  return (
-    <Fragment>
+return (
+  <div className="container">
+    <div className="left-column">
+    </div>
+    <div className="content">
       {isLoading ? (
-        <div>Loading ...</div>
+        <div>Loading...</div>
       ) : (
-        <ul className="list-group">
-          {page.map((item) => (
-            <li key={item.objectID} className="list-group-item">
-              <a href={item.url}>{item.title}</a>
-            </li>
-          ))}
-        </ul>
+        <NewsComponent articles={articles} />
       )}
-      <Pagination
-        items={data.hits}
-        pageSize={pageSize}
-        onPageChange={handlePageChange}
-      ></Pagination>
-    </Fragment>
-  );
+    </div>
+    <div className="right-column">
+    </div>
+  </div>
+);
 }
 
 export default App;
