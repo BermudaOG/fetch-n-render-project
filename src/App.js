@@ -9,17 +9,19 @@ function App() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-useEffect(() => {
-  axios.get(API_ENDPOINT)
-    .then((response) => {
-      setArticles(response.data.articles);
-      setIsLoading(false);
-    })
-    .catch((error) => {
-      console.error('API Error:', error);
-      setIsLoading(false);
-    });
-}, []);
+  useEffect(() => {
+    axios.get(API_ENDPOINT)
+      .then((response) => {
+        setArticles(response.data.articles);
+        setIsLoading(false);
+        console.log(response.data.articles); // Add this line
+      })
+      .catch((error) => {
+        console.error('API Error:', error);
+        setIsLoading(false);
+      });
+  }, []);
+  
 
 return (
   <div className="container">

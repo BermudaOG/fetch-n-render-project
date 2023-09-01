@@ -17,7 +17,9 @@ function NewsComponent({ articles }) {
   const totalPages = Math.ceil(articles.length / articlesPerPage);
   const indexOfLastArticle = currentPage * articlesPerPage;
   const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
-  const currentArticles = articles.slice(indexOfFirstArticle, indexOfLastArticle);
+  const currentArticles = articles
+    .slice(indexOfFirstArticle, indexOfLastArticle)
+    .filter((article) => article.title && article.url);
 
   const nextPage = () => {
     if (currentPage < totalPages) {
@@ -35,17 +37,21 @@ function NewsComponent({ articles }) {
     <div>
       <h2>Latest News</h2>
       <ul className="news-list">
-        {currentArticles.map((article) => (
-          <li key={article.url} className="news-item">
-            <a
-              href={article.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={isLinkVisited(article.url) ? 'visited' : ''}
-              onClick={() => markLinkAsVisited(article.url)}
-            >
-              {article.title}
-            </a>
+        {currentArticles.map((article, index) => (
+          <li key={index} className="news-item">
+            {article.title && article.url ? (
+              <a
+                href={article.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={isLinkVisited(article.url) ? 'visited' : ''}
+                onClick={() => markLinkAsVisited(article.url)}
+              >
+                {article.title}
+              </a>
+            ) : (
+              <span>Missing Title or URL</span>
+            )}
           </li>
         ))}
       </ul>
