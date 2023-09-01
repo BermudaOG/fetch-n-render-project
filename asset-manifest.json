@@ -1,15 +1,13 @@
 {
   "files": {
-    "main.css": "/fetch-n-render-project/static/css/main.2b3908b2.css",
-    "main.js": "/fetch-n-render-project/static/js/main.68700dd0.js",
-    "static/js/787.b2a9905f.chunk.js": "/fetch-n-render-project/static/js/787.b2a9905f.chunk.js",
+    "main.css": "/fetch-n-render-project/static/css/main.e06c2cc8.css",
+    "main.js": "/fetch-n-render-project/static/js/main.16f0392c.js",
     "index.html": "/fetch-n-render-project/index.html",
-    "main.2b3908b2.css.map": "/fetch-n-render-project/static/css/main.2b3908b2.css.map",
-    "main.68700dd0.js.map": "/fetch-n-render-project/static/js/main.68700dd0.js.map",
-    "787.b2a9905f.chunk.js.map": "/fetch-n-render-project/static/js/787.b2a9905f.chunk.js.map"
+    "main.e06c2cc8.css.map": "/fetch-n-render-project/static/css/main.e06c2cc8.css.map",
+    "main.16f0392c.js.map": "/fetch-n-render-project/static/js/main.16f0392c.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b3908b2.css",
-    "static/js/main.68700dd0.js"
+    "static/css/main.e06c2cc8.css",
+    "static/js/main.16f0392c.js"
   ]
 }
