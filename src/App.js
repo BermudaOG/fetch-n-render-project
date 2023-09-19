@@ -14,7 +14,7 @@ function App() {
       .then((response) => {
         setArticles(response.data.articles);
         setIsLoading(false);
-        console.log(response.data.articles); // Add this line
+        console.log(response.data.articles);
       })
       .catch((error) => {
         console.error('API Error:', error);
